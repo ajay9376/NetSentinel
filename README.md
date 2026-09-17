@@ -1,7 +1,7 @@
-# NetGuard-QoS-IDS
+# NetSentinel
 
 ## Project Title
-**NetGuard: QoS-Aware Network Intrusion Detection Using Comparative Machine Learning**
+**NetSentinel: QoS-Aware Network Intrusion Detection Using Comparative Machine Learning**
 
 ## Course
 **23CSE301 Machine Learning Capstone**
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Modern computer networks require robust automated systems capable of monitoring performance degradation and detecting sophisticated cyber attacks. **NetGuard-QoS-IDS** is a comprehensive machine learning framework designed to evaluate network traffic behavior, maintain Quality of Service (QoS), and classify network intrusions.
+Modern computer networks require robust automated systems capable of monitoring performance degradation and detecting sophisticated cyber attacks. **NetSentinel** is a comprehensive machine learning framework designed to evaluate network traffic behavior, maintain Quality of Service (QoS), and classify network intrusions.
 
 The project is structured into three independent, modular machine learning tracks:
 1. **Regression Track**: Continuous prediction of network QoS degradation and source packet loss from flow features.
@@ -39,7 +39,7 @@ To ensure rigorous evaluation across varied network environments, each track uti
 ## Project Structure
 
 ```text
-NetGuard-QoS-IDS/
+NetSentinel/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
@@ -77,8 +77,8 @@ NetGuard-QoS-IDS/
 
 1. Clone or navigate to the repository directory:
    ```bash
-   git clone https://github.com/ajay9376/NetSentinel.git NetGuard-QoS-IDS
-   cd NetGuard-QoS-IDS
+   git clone https://github.com/ajay9376/NetSentinel.git
+   cd NetSentinel
    ```
 
 2. Create and activate a virtual environment:
