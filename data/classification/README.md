@@ -77,3 +77,14 @@ The 78 input features encompass bidirectional statistical flow metrics extracted
    - Single stratified 80:20 split (`random_state=42`, `stratify=y`) shared across all 10 classification algorithms.
 4. **Leakage Prevention**:
    - Feature scalers (`StandardScaler`) and label encoders are fitted exclusively on `X_train` and applied to `X_test`.
+
+---
+
+## Validation Protocol & Explainability Standards
+
+1. **5-Fold Stratified Cross-Validation**:
+   - Baseline models are cross-validated on the training split using `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` to ensure stable generalization ($\sigma < 0.01$) and rule out fold-level overfitting.
+2. **Evaluation Metrics**:
+   - In addition to standard Accuracy and Weighted F1, Macro F1 is tracked to provide unweighted sensitivity for rare attack classes (`Bot`, `Web Attack`, `Patator`).
+3. **Feature Importance Explainability**:
+   - Tree-based feature importances highlight directional payload attributes (`Total Length of Bwd Packets`, `Subflow Fwd Bytes`, `Bwd Header Length`) as dominant signatures for network anomaly categorization.
