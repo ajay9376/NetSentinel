@@ -70,9 +70,11 @@ desktop.ini
 *.swo
 
 # Machine Learning model checkpoints and serialized artifacts
-# (Excludes binary models by default, preserves .gitkeep)
+# (Excludes binary models by default, preserves scripts and documentation)
 models/*
 !models/.gitkeep
+!models/*.py
+!models/README.md
 *.pkl
 *.joblib
 *.h5
