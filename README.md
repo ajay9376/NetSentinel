@@ -192,15 +192,20 @@ All 10 algorithms were evaluated on the unified held-out test split (35,069 reco
 
 ### 🛡️ Classification Track: Part A Benchmark Results
 
-All 5 Part A algorithms evaluated on the held-out test split (1,600 network flows):
+All 5 Part-A classification algorithms evaluated on the held-out test split (1,588 flows) and ranked by **Weighted $F_1$-Score**:
 
-| Algorithm | Accuracy | Weighted Precision | Weighted Recall | Weighted $F_1$ | Macro $F_1$ | Multiclass ROC-AUC (OvR) | Training Time (s) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Logistic Regression** | **0.8986** | 0.8396 | **0.8986** | **0.8643** | 0.4411 | **0.9815** | 0.97s |
-| **Support Vector Machine (SVC)** | 0.8967 | 0.8319 | 0.8967 | 0.8594 | 0.4131 | **0.9818** | 3.81s |
-| **K-Nearest Neighbors (KNN)** | 0.8715 | 0.8311 | 0.8715 | 0.8484 | 0.3804 | 0.9558 | 0.00s |
-| **Decision Tree** | 0.8331 | **0.8391** | 0.8331 | 0.8358 | **0.4635** | 0.9053 | 0.30s |
-| **Gaussian Naive Bayes** | 0.6971 | 0.8365 | 0.6971 | 0.7421 | 0.3313 | 0.9779 | 0.01s |
+| Rank | Algorithm | Model Family | Test Accuracy | Weighted Precision | Weighted Recall | Weighted $F_1$ | ROC-AUC (OvR) | Fit Time (s) |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | **Decision Tree Classifier** | Non-Parametric Tree | **89.31%** | 0.8540 | 0.8931 | **0.8662** | 0.9706 | 0.12s |
+| 2 | **Support Vector Machine (SVC)** | Maximum Margin Hyperplane | **89.75%** | 0.8408 | 0.8975 | **0.8645** | **0.9818** | 3.46s |
+| 3 | **Logistic Regression** | Multinomial Softmax | **89.62%** | 0.8410 | 0.8962 | **0.8634** | 0.9806 | 0.09s |
+| 4 | **K-Nearest Neighbors (KNN)** | Instance-Based Metric | **86.44%** | 0.8302 | 0.8644 | **0.8450** | 0.9522 | 0.00s |
+| 5 | **Gaussian Naive Bayes** | Probabilistic Bayesian | **77.12%** | **0.8459** | 0.7712 | **0.7834** | 0.9802 | 0.00s |
+
+#### Key Analytical Takeaways (Review 1 Part A)
+1. **Tree & Margin Superiority**: Decision Tree and Linear SVM establish the strongest trade-offs between precision and recall across both volumetric attacks (`DoS Hulk`) and stealthy intrusions (`PortScan`).
+2. **Impact of Feature Standardization**: Distance-sensitive algorithms (KNN, SVM, Logistic Regression) exhibit high numerical stability and rapid convergence when standardized via `StandardScaler`.
+3. **Probabilistic Baseline**: Gaussian Naive Bayes offers the lowest training latency (analytical closed-form estimation) and achieves strong ROC-AUC (0.9802), despite its conditional independence assumption being partially violated on correlated network telemetry.
 
 ---
 
