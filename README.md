@@ -92,7 +92,7 @@ NetSentinel/
 * **Dataset**: UNSW-NB15 (`data/regression/UNSW_NB15_training-set.csv`, 175,341 rows)
 * **Target Variable**: `sloss` (Source packet loss continuous metric)
 * **Leakage Removal**: Excluded `id`, `attack_cat`, `label`, and `sloss` from predictors.
-* **Engineered Feature**: $\text{total\_bytes} = \text{sbytes} + \text{dbytes}$ (bidirectional flow volume).
+* **Engineered Feature**: `total_bytes = sbytes + dbytes` (bidirectional flow volume).
 * **Single Standardized Partition**: 80:20 train-test split (`random_state=42`) with `StandardScaler` and `OneHotEncoder` fitted strictly on training data.
 * **All 10 Required Algorithms**:
   1. Linear Regression (OLS Baseline)
