@@ -79,6 +79,7 @@ models/*
 *.joblib
 *.h5
 *.onnx
+!models/*.joblib
 
 # NOTE: CSV files are intentionally NOT ignored globally,
 # allowing team members to commit datasets that comply with GitHub file size limits.

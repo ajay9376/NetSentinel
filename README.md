@@ -241,8 +241,45 @@ Navigate to `notebooks/` and open `regression.ipynb`, `classification.ipynb`, or
 
 ---
 
-## 👥 Academic Integrity & Course Attribution
+## 🖥️ Interactive SOC Intelligence GUI (Review 2 Deliverable)
+
+NetSentinel includes a full-featured, Security Operations Center (SOC)-inspired web application built with **Streamlit** and **Plotly**, styled with a dark cybersecurity intelligence design system.
+
+### Key Capabilities
+* 🛡️ **Security Overview**: Executive SOC telemetry with audited dataset volume counters, threat class distributions, and top model performance indicators.
+* ⚡ **Traffic Analysis & Inference Engine**: Drag-and-drop CSV upload and pre-packaged sample batch loaders with automatic schema validation, real-time threat categorization, prediction confidence scores, and exportable CSV telemetry reports.
+* 🎯 **Threat Intelligence**: Interactive multi-class confusion matrices, One-vs-Rest ROC-AUC curves, per-class precision/recall metrics, and tactical SOC mitigation playbooks.
+* 📉 **Regression Analytics**: 10-algorithm comparison table ranked by $R^2$, 5-fold CV $R^2$, RMSE, MAE, actual vs. predicted scatter plots, and an interactive single-flow QoS packet loss calculator.
+* 🔬 **Classification Model Lab**: Multi-model benchmark, Part A baseline models vs. Part B ensembles/MLP, architecture comparisons, and hyperparameter tuning reports.
+* 🧩 **Clustering Studio**: Unsupervised behavioral profiling on NSL-KDD, K-Means ($K=5$) vs. Agglomerative Hierarchical ($K=5$), interactive 2D PCA subspace projections with ground-truth validation toggles, inertia elbow curve, and cluster purity metrics.
+* 📊 **Dataset & Artifact Explorer**: Schema inspection, zero-variance feature pruning audit, feature engineering breakdown, and physical model artifact inspector.
+
+### 🚀 Running the GUI Locally
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Launch the application
+streamlit run app/main.py
+```
+The application will launch at `http://localhost:8501`.
+
+---
+
+## 👥 Team
+
+| Member | Name | Focus Areas |
+| :--- | :--- | :--- |
+| **Member 1** | Ajay | Classification (Ensembles / RF / Bagging), Clustering (NSL-KDD / K-Means / Elbow), GUI Core & Live Inference Engine |
+| **Member 2** | Karthik | Classification (AdaBoost / Gradient Boosting), Clustering (Hierarchical / PCA), Classification Lab & Threat Intel |
+| **Member 3** | Vishal | Classification (MLP / 10-Model Benchmark), Clustering (t-SNE / Validation Metrics / Purity), Clustering Studio & Analytics |
+
+---
+
+## 🎓 Academic Integrity & Course Attribution
 
 This project is conducted as part of the **23CSE301 Machine Learning Capstone** course. All data auditing, feature engineering, model training, cross-validation, and analytical interpretations were independently executed by the project team.
 
 *In accordance with course guideline section 7.5, generative AI tools were utilized strictly for boilerplate code scaffolding and markdown styling; all data transformations, empirical evaluations, and technical conclusions are original to the project team.*
+
