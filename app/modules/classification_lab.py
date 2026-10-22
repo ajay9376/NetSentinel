@@ -1,5 +1,6 @@
 """
 Section E: Classification Model Lab Workspace (CIC-IDS2017)
+Review 2 Track Module Lead: Member 2 (Karthik)
 """
 
 import streamlit as st
@@ -187,6 +188,21 @@ def render_classification_lab():
                 "Parameter Grid": "max_depth: [5, 8, 10, 15, None]",
                 "Optimal Configuration": "max_depth=10",
                 "Outcome": "Prevented leaf node memorization on single-flow noise while preserving 89.04% accuracy."
+            },
+            {
+                "Algorithm": "AdaBoost Classifier",
+                "Validation Setup": "Stagewise Learning Rate & Base Estimator Grid Search",
+                "Parameter Grid": "n_estimators: [50, 100, 150], learning_rate: [0.05, 0.1, 0.2]",
+                "Optimal Configuration": "n_estimators=50, learning_rate=0.1, algorithm='SAMME.R'",
+                "Outcome": "Iterative exponential re-weighting prioritized boundary samples without numerical divergence."
+            },
+            {
+                "Algorithm": "Gradient Boosting Classifier",
+                "Validation Setup": "Negative Gradient Pseudo-Residual Depth & Shrinkage Grid",
+                "Parameter Grid": "n_estimators: [100, 150], learning_rate: [0.05, 0.1], max_depth: [3, 5]",
+                "Optimal Configuration": "n_estimators=100, learning_rate=0.1, max_depth=3",
+                "Outcome": "Achieved tight margin separation on multi-class attack categories with sub-second scoring latency."
             }
         ]
         st.dataframe(pd.DataFrame(tuning_records), use_container_width=True, hide_index=True)
+

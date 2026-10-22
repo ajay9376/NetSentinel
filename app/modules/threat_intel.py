@@ -1,5 +1,6 @@
 """
 Section C: Threat Intelligence & Deep Attack Inspection
+Review 2 Track Module Lead: Member 2 (Karthik)
 """
 
 import streamlit as st
@@ -137,6 +138,24 @@ def render_threat_intel():
                 "mechanism": "Automated command-and-control (C2) heartbeat beacons and automated credential stuffing.",
                 "key_features": "Flow IAT Mean, Idle Mean, Subflow Bwd Bytes",
                 "soc_playbook": "Quarantine C2 domain via DNS sinkhole, deploy CAPTCHA challenges, revoke compromised session tokens."
+            },
+            {
+                "category": "DoS Slowloris & Slowhttptest",
+                "severity": "HIGH",
+                "color": "#a855f7",
+                "mitre": "T1499.003 &bull; Application Slow-Rate Exhaustion",
+                "mechanism": "Low-bandwidth HTTP request holding by transmitting partial headers at prolonged intervals.",
+                "key_features": "Flow Duration, Flow IAT Mean, Bwd Packet Length Min",
+                "soc_playbook": "Enforce strict HTTP keep-alive timeouts, limit concurrent open sockets per client IP, deploy HAProxy connection buffering."
+            },
+            {
+                "category": "Heartbleed",
+                "severity": "CRITICAL",
+                "color": "#dc2626",
+                "mitre": "T1190 &bull; OpenSSL Heartbeat Buffer Over-read",
+                "mechanism": "Malformed TLS Heartbeat request returning up to 64KB of server process heap memory.",
+                "key_features": "Total Fwd Packets, Flow Duration, Packet Length Variance",
+                "soc_playbook": "Verify OpenSSL CVE-2014-0160 patch level, revoke and regenerate SSL private keys, monitor anomalous TLS payload sizes."
             }
         ]
 
